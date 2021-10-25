@@ -27,6 +27,8 @@
                             <input type="text" placeholder="192.168.2.xxx" name="ipCam" size="8" minlength="13" maxlength="13" required>
                         </td>
                     </tr>
+                </tbale>
+                <table border='0'>
                     <tr>
                         <td>
                         <td>
