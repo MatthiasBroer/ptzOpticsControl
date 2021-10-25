@@ -21,6 +21,14 @@
                 <table border='0'>
                     <tr>
                         <td>
+                            <strong>Camera IP adres: <strong>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="192.168.2.xxx" name="ipCam" size="8" minlength="13" maxlength="13" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                         <td>
                         <td>
                             <input name="omhoog" type="submit" value="omhoog" />
@@ -62,43 +70,50 @@
                 error_reporting(0);
                 if (isset($_POST['omhoog']))
                 {
-                    $url = 'http://192.168.2.241/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url of cam 1
+                    $camUrl = $_POST['ipCam']; // get the ip form user input
+                    $url = $camUrl . '/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url for cam
                     $action = 'UP&1&10'; // the actiond for the camera to do
                     $requestUrl = $url. $action;
                 }
                 if (isset($_POST['links']))
                 {
-                    $url = 'http://192.168.2.241/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url of cam 1
+                    $camUrl = $_POST['ipCam']; // get the ip form user input
+                    $url = $camUrl . '/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url for cam
                     $action = 'LEFT&10&1'; // the actiond for the camera to do
                     $requestUrl = $url. $action;
                 }
                 if (isset($_POST['rechts']))
                 {
-                    $url = 'http://192.168.2.241/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url of cam 1
+                    $camUrl = $_POST['ipCam']; // get the ip form user input
+                    $url = $camUrl . '/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url for cam
                     $action = 'RIGHT&10&1'; // the actiond for the camera to do
                     $requestUrl = $url. $action;
                 }
                 if (isset($_POST['omlaag']))
                 {
-                    $url = 'http://192.168.2.241/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url of cam 1
+                    $camUrl = $_POST['ipCam']; // get the ip form user input
+                    $url = $camUrl . '/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url for cam
                     $action = 'DOWN&1&10'; // the actiond for the camera to do
                     $requestUrl = $url. $action;
                 }
                 if (isset($_POST['zoomIn']))
                 {
-                    $url = 'http://192.168.2.241/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url of cam 1
+                    $camUrl = $_POST['ipCam']; // get the ip form user input
+                    $url = $camUrl . '/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url for cam
                     $action = 'ZOOMIN&5'; // the actiond for the camera to do
                     $requestUrl = $url. $action;
                 }
                 if (isset($_POST['zoomUit']))
                 {
-                    $url = 'http://192.168.2.241/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url of cam 1
+                    $camUrl = $_POST['ipCam']; // get the ip form user input
+                    $url = $camUrl . '/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url for cam
                     $action = 'ZOOMOUT&5'; // the actiond for the camera to do
                     $requestUrl = $url. $action;
                 }
                 if (isset($_POST['zoomStop']))
                 {
-                    $url = 'http://192.168.2.241/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url of cam 1
+                    $camUrl = $_POST['ipCam']; // get the ip form user input
+                    $url = $camUrl . '/cgi-bin/ptzctrl.cgi?ptzcmd&'; // url for cam
                     $action = 'ZOOMSTOP&5'; // the actiond for the camera to do
                     $requestUrl = $url. $action;
                 }
